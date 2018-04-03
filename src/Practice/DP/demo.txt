@@ -1,0 +1,3 @@
+For DP, the most important one is determine the transform function
+
+Need more practice
