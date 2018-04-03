@@ -33,7 +33,6 @@ public class MaxContinuousMultiple {
 
         System.out.println(dResult);
 
-
     }
 
 }
