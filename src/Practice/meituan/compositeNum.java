@@ -49,32 +49,6 @@ public class compositeNum {
         }
 
         System.out.println("fefw");
-//        String result = "";
-//        int result_num = 0;
-//
-//        int max_ops_num = 0;
-//        for(int i = 0; i<=9; i++){
-//            if(keyChar.get(Integer.toString(i))> max_ops_num){
-//                max_ops_num =  keyChar.get(Integer.toString(i));
-//            }
-//        }
-//
-//        int min_ops_num = 2000;
-//        String[] min_ops = new String[max_ops_num];
-//
-//        for(int j = max_ops_num-1; j>=0; j--){
-//            String temp = "";
-//            for(int i = 0; i<=9; i++){
-//
-//                if(keyChar.get(Integer.toString(i))<= min_ops_num){
-//                    min_ops_num =  keyChar.get(Integer.toString(i));
-//                    temp = Integer.toString(i);
-//                }
-//            }
-//            min_ops[j] = temp;
-//        }
-//
-//        System.out.println(min_ops);
 
     }
 }
