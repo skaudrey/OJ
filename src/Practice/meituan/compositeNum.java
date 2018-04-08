@@ -14,41 +14,71 @@ public class compositeNum {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
-        String str = sc.nextLine();
+        char[] str = sc.next().toCharArray();
 
-        int[] keyChar = new int[10];
-        for(int i=0; i< keyChar.length; i++){
-            keyChar[i] = 0;
+        int[] keyChar = new int[10];//记录每个数字出现的次数
+        for(int i=0; i<str.length; i++){
+            keyChar[str[i]-'0'] += 1;
+        }
+        // get the num with lowest frequency and the frequency amount
+        int nMin = 0;
+        int nNumOfMin = Integer.MAX_VALUE;
+        for (int j=0; j<10; j++){
+            if(keyChar[j]<nNumOfMin){
+                nNumOfMin = keyChar[j];
+                nMin = j;
+            }
         }
 
-//        System.out.println("key 0" + "value: " + Integer.toString(keyChar.get("0") ));
+        int nResult = impossibleNum(keyChar);
 
-        int nMax = 0;
-        for(int i=0; i<str.length(); i++){
-            for (int j=0; j<=9; j++){
-                if(str.charAt(i)-'0'==j){
-                    keyChar[j] += 1;
-                    if(keyChar[j]>nMax)
-                        nMax = keyChar[j];
+        System.out.println(nResult);
+
+    }
+
+    //根据各个数字的出现频率判断最不可能的数
+    public static int impossibleNum(int[] frequencyArr){
+        int nResult = 0;
+
+        int nNone = -1;
+        int nFrequencyNone = Integer.MAX_VALUE;
+
+        //出现除0外，出现频率最低且对应的索引值最小的那一个
+        for(int i=1; i<10;i++){
+            if(nFrequencyNone>=frequencyArr[i] ){
+                nFrequencyNone = frequencyArr[i];
+            }
+        }
+        for(int i=1; i<10; i++){
+            if(frequencyArr[i]==nFrequencyNone){
+                nNone=i;
+                break;
+            }
+        }
+
+        //除0外的一个没出现
+        if(nNone>0 && nFrequencyNone==0)
+            nResult = nNone;
+
+        else if(nNone>0 && nFrequencyNone>0 && frequencyArr[0]==0)
+            nResult = 10;
+
+
+        else{
+            nResult = nNone;
+            String str = "";
+            if(nNone!=0){
+                for(int m = 0; m<=nFrequencyNone; m++){
+                    str+=Integer.toString(nNone);
                 }
+                nResult = Integer.parseInt(str);
+
+            }
+            else {
+                nResult = 10^(nFrequencyNone+1);
             }
         }
 
-//        int nTempSize = 2000;
-        int[] strResult = new int[nMax*10];    //��¼�ַ���Ŀ��������С�Ķ�Ӧ���ַ�ֵ���������ƣ��ַ��������ٵ�����Ŀ��
-
-        for(int i=0; i<nMax*10; i++)
-            strResult[i] = -1;
-
-        int nTempInd = 0;
-        for(int i=0; i<= nMax; i++){
-            for(int j=0; j< keyChar.length; j++){
-                if(keyChar[j] == i )
-                    strResult[nTempInd++] = j;
-            }
-        }
-
-        System.out.println("fefw");
-
+        return nResult;
     }
 }
