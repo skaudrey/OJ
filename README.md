@@ -1,3 +1,6 @@
+# Encoding
+GBK
+
 # recusion problem
 ## characteristic
 1.  The output of recursion.

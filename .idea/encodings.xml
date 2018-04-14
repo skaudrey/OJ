@@ -3,5 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/Practice/Any/ParseRegx.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/src/Practice/DP/GetStudent.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/Practice/NiuKeOJ/AddWithoutOperator.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/Practice/NiuKeOJ/parseInt.java" charset="GBK" />
+    <file url="PROJECT" charset="GBK" />
   </component>
 </project>
