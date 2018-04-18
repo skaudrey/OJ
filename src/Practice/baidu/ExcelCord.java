@@ -33,7 +33,7 @@ public class ExcelCord {
 		while(i<nSize){
 			str[i]=input.nextLine();
 			i++;
-			}
+		}
 		
 		
 		String result="";
@@ -41,7 +41,7 @@ public class ExcelCord {
 		for(i=0;i<nSize;i++){
 			String temp= str[i];
 			//RC¸ñÊ½
-			if(temp.startsWith("R")){
+			if(temp.startsWith("R")&& temp.charAt(1)<'A'){
 				int nC=temp.indexOf("C");
 				String a1 = temp.substring(1, nC);
 				int a2 = Integer.parseInt(temp.substring(nC+1));
